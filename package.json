@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server/index.js",
-    "build": "webpack -d --watch"
+    "build": "webpack -d --watch",
+    "dbSeed": "node database/seedData.js"
+    
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,7 @@
     "axios": "^0.20.0",
     "eslint-config-hackreactor": "github:hackreactor-labs/eslint-config-hackreactor",
     "express": "^4.17.1",
+    "faker": "^5.1.0",
     "mongoose": "^5.10.6",
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
