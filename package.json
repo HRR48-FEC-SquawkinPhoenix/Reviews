@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/HRR48-FEC-SquawkinPhoenix/Reviews#readme",
   "dependencies": {
+    "axios": "^0.20.0",
     "eslint-config-hackreactor": "github:hackreactor-labs/eslint-config-hackreactor",
     "express": "^4.17.1",
     "mongoose": "^5.10.6",
