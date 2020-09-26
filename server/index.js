@@ -16,12 +16,12 @@ app.get('/', function(req, res) {
   res.send('hello');  
 })
 
-app.get('/', function(req, res) {
-  Reviews
+app.get('/api/allReviews', function(req, res) {
+  Review.find({}).then((results) => {res.json(results)}).catch((error) => {console.log(error)});
 })
 
 
-
+  
 
 
 app.listen(port, function() {
