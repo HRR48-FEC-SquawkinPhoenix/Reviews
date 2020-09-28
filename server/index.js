@@ -11,13 +11,23 @@ app.use(parser.urlencoded({ extended: true}));
 app.use(express.static(__dirname + '/../public'));
 
 
-app.get('/', function(req, res) {
-  console.log(req);
+app.get('/', function(req, res) {  
   res.send('hello');  
 })
 
 app.get('/api/allReviews', function(req, res) {
   Review.find({}).then((results) => {res.json(results)}).catch((error) => {console.log(error)});
+})
+
+app.get('/api/allReviews/:reviewId', function (req, res) {
+  let id = req.params.reviewId;
+  Review.find({_id: id})
+    .then((results) => {
+      res.json(results)
+    })
+    .catch(err => {
+      console.error(err);
+    })
 })
 
 
@@ -27,3 +37,6 @@ app.get('/api/allReviews', function(req, res) {
 app.listen(port, function() {
   console.log('listening on port :', port);
 });
+
+
+module.exports = app;
