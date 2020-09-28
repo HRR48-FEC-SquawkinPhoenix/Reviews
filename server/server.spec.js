@@ -65,10 +65,11 @@ describe('server testing', () => {
       .then(response => {
         return expect(response.data[0]).toMatchObject(expected)
       })
+      .catch(err => {
+        throw err
+      })
   })
 
 
 
-
-
-})
+});
