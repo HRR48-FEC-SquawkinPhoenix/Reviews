@@ -8,7 +8,7 @@ const fakeData = []
 let generateFakeData = () => {  
   let singleReview = {};  
   singleReview.author = faker.name.findName();
-  singleReview.purchaseItem = faker.commerce.productName();
+  singleReview.purchasedItem = faker.commerce.productName();
   singleReview.imageUrl = faker.image.imageUrl();
   singleReview.reviewBody = faker.hacker.phrase();
   singleReview.helpful = Math.floor(Math.random() * 500);
