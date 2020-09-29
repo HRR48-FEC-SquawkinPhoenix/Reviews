@@ -12,7 +12,6 @@ const ReviewListEntry = props => {
       <img className="review-image" src={props.review.imageUrl}/>
       <div className="review-body">{props.review.reviewBody}</div>
       <button className="review-helpful">Is this review helpful?</button>
-
     </li>
   )
 }
