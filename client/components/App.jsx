@@ -23,14 +23,18 @@ function App() {
       })  
              
   }, [])  
-  
+
+  const onPageNumberButtonClick = (e, fourReviews) => {
+    console.log(fourReviews);
+    setReviewsByFour(fourReviews)
+  }
   
   
   return (
     <div>
       <div className="header">{numOfReviews + ' reviews'}</div>
       <ReviewList numOfButtons={numOfReviews} reviews={reviewsByFour} data={data}/>
-      <PageCarouselButtons data={data}/>
+      <PageCarouselButtons data={data} onPageNumberButtonClick={onPageNumberButtonClick}/>
     </div>
      
   )

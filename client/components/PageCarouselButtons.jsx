@@ -27,9 +27,11 @@ const PageCarouselButtons = (props) => {
   return (    
     <div>
       <button>Back</button>
-      {arrOfFours.map((pageButtons) => {             
+      {arrOfFours.map((pageButtons) => {          
         ++buttonNum;
         return <CarouselButton
+        onPageNumberButtonClick={props.onPageNumberButtonClick}
+        arrOfFours = {arrOfFours}
         pageButtons={pageButtons}
         buttonNum={buttonNum}
         key={buttonNum}
