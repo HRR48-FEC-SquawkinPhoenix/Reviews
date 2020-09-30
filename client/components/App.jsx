@@ -26,7 +26,7 @@ function App() {
   
   return (
     <div>
-      <div>{numOfReviews + ' reviews'}</div>
+      <div className="header">{numOfReviews + ' reviews'}</div>
       <ReviewList reviews={data}/>
     </div>
      
