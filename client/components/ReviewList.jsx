@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import ReviewListEntry from './ReviewListEntry.jsx';
   
-const ReviewList = (props) => {  
-  
-    
+const ReviewList = (props) => {    
+
   return (
     <div>
       <ul>        
