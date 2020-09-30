@@ -30,7 +30,7 @@ function App() {
     <div>
       <div className="header">{numOfReviews + ' reviews'}</div>
       <ReviewList numOfButtons={numOfReviews} reviews={reviewsByFour} data={data}/>
-      <PageCarouselButtons numOfButtons={numOfReviews} data={data}/>
+      <PageCarouselButtons data={data}/>
     </div>
      
   )
