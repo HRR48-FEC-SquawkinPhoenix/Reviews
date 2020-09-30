@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import ReviewList from './ReviewList.jsx';
+import PageCarouselButtons from './PageCarouselButtons.jsx';
 
 function App() {
   const [data, setData] = useState([])
   const [numOfReviews, setNum] = useState(0)
+  const [reviewsByFour, setReviewsByFour] = useState([])
     
 
   useEffect(() => {    
@@ -14,22 +16,21 @@ function App() {
       .then((results) => {
         setNum(results.length)                          
         setData(results)
+        setReviewsByFour(results.slice(0, 4))
       })        
       .catch(error => {
         throw error;
       })  
              
-  }, [])
-
-
-  
+  }, [])  
   
   
   
   return (
     <div>
       <div className="header">{numOfReviews + ' reviews'}</div>
-      <ReviewList reviews={data}/>
+      <ReviewList numOfButtons={numOfReviews} reviews={reviewsByFour} data={data}/>
+      <PageCarouselButtons numOfButtons={numOfReviews} data={data}/>
     </div>
      
   )
