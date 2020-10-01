@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import ReviewList from './ReviewList.jsx';
 import PageCarouselButtons from './PageCarouselButtons.jsx';
+import StarsAverage from './StarsAverage.jsx';
+
 
 function App() {
   const [data, setData] = useState([]);
@@ -62,7 +64,7 @@ function App() {
   
   return (
     <div>
-      <div className="header">{numOfReviews + ' reviews'}</div>
+      <div className="header">{numOfReviews + ' reviews '} <StarsAverage data={data}/> </div>
       <ReviewList numOfButtons={numOfReviews} reviews={reviewsByFour} data={data}/>
       <PageCarouselButtons data={data} onPageNumberButtonClick={onPageNumberButtonClick} index={trackPageIndex} 
       onNextPageButtonClick={onNextPageButtonClick} onBackPageButtonClick={onBackPageButtonClick} 
