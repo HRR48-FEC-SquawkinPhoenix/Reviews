@@ -1,41 +1,49 @@
 import React, {useState, useEffect} from 'react';
 import CarouselButton from './CarouselButton.jsx';
 
-const PageCarouselButtons = (props) => {
+const PageCarouselButtons = ({data, index, onNextPageButtonClick, onPageNumberButtonClick, onBackPageButtonClick}) => {
   
   let buttonNum = 0;  
   let arrOfFours = [];
 
-  const createIndexsOfFour = (data) => {    
+  const createIndexsOfFour = (data) => {               
+    let copy = data.slice();
     let fourReviews = [];
-    let count = 0;
-    for(let i = 0; i < data.length; i++) {
-      if (count <= 3) {
-        fourReviews.push(data[i]);
-        count++;
-      } else {
-        arrOfFours.push(fourReviews)
-        fourReviews = [];
-        count = 0;
-      }       
-    }    
+    for (let i = 0; i < copy.length; i++) {
+      fourReviews.push(copy[i]);
+      if(fourReviews.length === 4) {
+        arrOfFours.push(fourReviews);
+        fourReviews = []
+      }
+    }
   }
 
-  createIndexsOfFour(props.data);
-  console.log(arrOfFours);
+  createIndexsOfFour(data);  
+  
+  
+   
+  
   
   return (    
     <div>
-      <button>Back</button>
-      {arrOfFours.map((pageButtons) => {             
+      <button onClick={(e) => {
+        onBackPageButtonClick(e, arrOfFours[index -1], index -1);
+      }}>Back</button>
+      {arrOfFours.map((pageButtons) => {          
         ++buttonNum;
         return <CarouselButton
+        onPageNumberButtonClick={onPageNumberButtonClick}
+        arrOfFours = {arrOfFours}
         pageButtons={pageButtons}
         buttonNum={buttonNum}
         key={buttonNum}
         />
       })}
-      <button>Next</button>
+      <button onClick={(e) => {
+        onNextPageButtonClick(e, arrOfFours[index + 1], index + 1);
+      }}>
+        Next
+        </button>
     </div>
   )
   //when we click on a button we want to slice at that group button 1 returns elements 0-3 buttons 2 returns elements 4-7

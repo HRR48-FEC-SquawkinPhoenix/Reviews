@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react';
 
 
-const CarouselButton = (props) => {  
+const CarouselButton = ({buttonNum, onPageNumberButtonClick, arrOfFours}) => {  
   return (
-  <button>{props.buttonNum}</button>
+  <button onClick={(e) => {
+    onPageNumberButtonClick(e, arrOfFours[buttonNum - 1], buttonNum - 1)  
+  }}>{buttonNum}</button>
   )
 
 }
