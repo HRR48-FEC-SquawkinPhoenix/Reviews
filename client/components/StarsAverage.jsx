@@ -21,8 +21,7 @@ const StarsAverage = ({data}) => {
         emptySymbol={<FontAwesomeIcon icon={farStar}/>}
         fullSymbol={<FontAwesomeIcon icon={faStar}/>}
         fractions={2}               
-      />
-  
+      />  
    </div>
   )
 };
