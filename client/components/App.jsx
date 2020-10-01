@@ -46,9 +46,7 @@ function App() {
   };
   
   const onBackPageButtonClick = (e, fourReviews, index) => {
-    let reviewSets = Math.ceil(data.length / 4);
-    console.log('this is the index :', index);
-    console.log('this is the reviewSets', reviewSets);    
+    let reviewSets = Math.ceil(data.length / 4);     
     if(index === -1) {
       setReviewsByFour(data.slice(data.length - 4));
       setPageIndex(reviewSets);
