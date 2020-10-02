@@ -2,56 +2,79 @@
   display: flex;
   font-size: 26px;
   font-family: 'Cairo', sans-serif;
+  
+  
 }
 .total-stars{
   font-size: 24px;
-}
-.review-image {  
-  width: 125px;
-  height: 125px;
-  border-radius: 10px;  
+  padding-left: 10px;
+  padding-right: 10px;
 }
 .container {
-  display: grid;
-  grid-template-columns: 125px 125px 125px 125px;
-  grid-template-rows: 20% 20% 40% auto;
+  display: flex;
+  flex-flow: column wrap;
+  align-content: space-between;
+  height: 340px;
+  max-width: 564px;
+  font-family: "Darker Grotesque", sans-serif;
+}
+.name-date{
+  display: flex;
+  flex-direction: row;    
 }
 
-
-.review-author {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
+.review-author {  
+  padding-right: 5px;
   font-size: 13px;
+  order: 1;
 }
-.review-date {
-  grid-column-start: 2;
-  grid-column-end: 3;
-  grid-row-start: 2;
+.review-date {  
   font-size: 13px;
-
+  order: 1;
 }
 
-.stars {  
+.stars {    
   font-size: 14px;
+  order: 2;  
+}
+
+
+
+.purchased-item{  
+  font-size: 13px;
+  order: 4;
+}
+
+.review-helpful { 
+  text-align: left;
+  width: 200px;
+  order: 5;   
+  border: none;
+  background-color: white;
+  padding-right: 5px;
+}
+
+
+
+
+
+
+
+.body-image{
+  display: flex;
+  flex-direction: row;
 }
 
 .review-body {
+  width: 45%;
   font-size: 16px;
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 3;
-  grid-row-end: 3;
-  font-size: 13px;
+  order: 3;  
+  padding-right: 50px;
 }
 
-.purchased-item{
-  font-size: 13px;
-}
-
-.review-helpful {
-  width: 50px;
-  height: 50px;
-  border: none;
-  background-color: white;
+.review-image {  
+  order: 4;
+  width: 125px;
+  height: 125px;
+  border-radius: 10px;    
 }
