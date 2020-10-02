@@ -17,13 +17,19 @@ const ReviewListEntry = props => {
 
   
   return (
-    <li>
-      <div className="review-author">{props.review.author}</div>
-      <div className="review-date"><Moment interval={1500} format="MMM D, YYYY" withTitle>{props.review.date}</Moment></div>
-      <div className="stars">{stars}</div>
-      <div className="purchased-item">{props.review.purchasedItem}</div>
+    <li className="container">
+      <div className="name-date">
+        <p className="review-author">{props.review.author}</p>
+        <p className="review-date"><Moment interval={1500} format="MMM D, YYYY" withTitle>{props.review.date}</Moment></p>
+      </div>
+      <div>
+        <div className="stars-item-body">
+          <h1 className="stars">{stars}</h1>
+          <h3 className="review-body">{props.review.reviewBody}</h3>
+          <h2 className="purchased-item">{props.review.purchasedItem}</h2>      
+        </div>  
       <img className="review-image" src={props.review.imageUrl}/>
-      <div className="review-body">{props.review.reviewBody}</div>
+    </div>  
       <button className="review-helpful">Is this review helpful?</button>
     </li>
   )
