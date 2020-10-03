@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import ReviewList from './ReviewList.jsx';
 import PageCarouselButtons from './PageCarouselButtons.jsx';
 import StarsAverage from './StarsAverage.jsx';
+import Tabs from './Tabs.jsx';
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
   const [numOfReviews, setNum] = useState(0);
   const [reviewsByFour, setReviewsByFour] = useState([]);
   const [trackPageIndex, setPageIndex] = useState(0);
+  const [tabSelected, selectTab] = useState(0);
     
 
   useEffect(() => {    
@@ -21,6 +23,7 @@ function App() {
         setData(results)
         setReviewsByFour(results.slice(0, 4))
         setPageIndex(0);
+        selectTab(0);
       })        
       .catch(error => {
         throw error;
@@ -55,16 +58,49 @@ function App() {
     } else {
       setReviewsByFour(fourReviews);
       setPageIndex(index);
-    }
-
-  
+    }  
   }
 
+  const onTabButtonClick = (e, itemName) => {   
+    if (tabSelected === 0) {
+      fetch(`/api/${itemName}`)  
+        .then((res) => {
+          return res.json()
+        })
+        .then((results) => {
+          setNum(results.length)                          
+          setData(results)
+          setReviewsByFour(results.slice(0, 4))
+          setPageIndex(0);
+          selectTab(1);
+        })
+        .catch(error => {
+          throw error;
+        }) 
+    } else if (tabSelected === 1) {
+        fetch('/api/allReviews')  
+          .then((res) => {
+            return res.json()
+          })
+          .then((results) => {
+            setNum(results.length)                          
+            setData(results)
+            setReviewsByFour(results.slice(0, 4))
+            setPageIndex(0);
+            selectTab(0);
+          })
+          .catch(error => {
+            throw error;
+          }) 
+    } 
+    
+  }
   
   
   return (
     <div>
       <div className="header">{numOfReviews + ' reviews '} <StarsAverage data={data}/> </div>
+      <Tabs tabClick={onTabButtonClick}/>
       <ReviewList numOfButtons={numOfReviews} reviews={reviewsByFour} data={data}/>
       <PageCarouselButtons data={data} onPageNumberButtonClick={onPageNumberButtonClick} index={trackPageIndex} 
       onNextPageButtonClick={onNextPageButtonClick} onBackPageButtonClick={onBackPageButtonClick} 

@@ -5,8 +5,10 @@ mongoose.Promise = global.Promise;
 
 
 const reviewSchema = new mongoose.Schema ({
+  authorPhoto: String,
   author: String,
   purchasedItem: String,
+  itemDescription: String,
   imageUrl: String,
   reviewBody: String,
   helpful: {type: Number, default: 0},

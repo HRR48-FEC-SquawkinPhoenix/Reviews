@@ -20,6 +20,7 @@ const ReviewListEntry = props => {
   return (
     <li className="container">
       <div className="name-date">
+        <img className="author-image" src={props.review.authorPhoto}/>
         <p className="review-author">{props.review.author}</p>
         <p className="review-date"><Moment interval={1500} format="MMM D, YYYY" withTitle>{props.review.date}</Moment></p>
       </div>

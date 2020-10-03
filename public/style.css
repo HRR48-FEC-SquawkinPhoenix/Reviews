@@ -1,15 +1,15 @@
 .header{
   display: flex;
   font-size: 26px;
-  font-family: 'Cairo', sans-serif;
-  
-  
+  font-family: 'Cairo', sans-serif;  
 }
-.total-stars{
+
+.total-stars {
   font-size: 24px;
   padding-left: 10px;
   padding-right: 10px;
 }
+
 .container {
   display: flex;
   flex-flow: column wrap;
@@ -18,13 +18,15 @@
   max-width: 564px;
   font-family: "Darker Grotesque", sans-serif;
 }
-.name-date{
+
+.name-date {
   display: flex;
   flex-direction: row;    
 }
 
 .review-author {  
   padding-right: 5px;
+  padding-left: 15px;
   font-size: 13px;
   order: 1;
 }
@@ -32,26 +34,42 @@
   font-size: 13px;
   order: 1;
 }
-
-.stars {    
-  font-size: 14px;
-  order: 2;  
+.author-image {
+  width: 36px;
+  height: 36px;
+  border-radius: 90px;      
 }
 
 
+.stars {    
+  font-size: 14px;
+  order: 2; 
+  padding-left: 50px; 
+}
 
-.purchased-item{  
+.purchased-item {  
   font-size: 13px;
   order: 4;
+  padding-left: 50px;
 }
 
 .review-helpful { 
   text-align: left;
-  width: 200px;
+  line-height: 0;
+  width: 165px;
   order: 5;   
   border: none;
   background-color: white;
-  padding-right: 5px;
+  height: 35px;  
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 40px;
+  
+}
+.review-helpful:hover {
+  border-radius: 15px;
+  background-color: rgb(226, 226, 226);
+  cursor: pointer; 
 }
 
 
@@ -60,6 +78,7 @@
   display: flex;
   flex-direction: row;
   align-content: space-between;
+  padding-left: 50px;
 }
 
 .review-body {
