@@ -1,0 +1,80 @@
+.header{
+  display: flex;
+  font-size: 26px;
+  font-family: 'Cairo', sans-serif;
+  
+  
+}
+.total-stars{
+  font-size: 24px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.container {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: space-between;
+  height: 340px;
+  max-width: 564px;
+  font-family: "Darker Grotesque", sans-serif;
+}
+.name-date{
+  display: flex;
+  flex-direction: row;    
+}
+
+.review-author {  
+  padding-right: 5px;
+  font-size: 13px;
+  order: 1;
+}
+.review-date {  
+  font-size: 13px;
+  order: 1;
+}
+
+.stars {    
+  font-size: 14px;
+  order: 2;  
+}
+
+
+
+.purchased-item{  
+  font-size: 13px;
+  order: 4;
+}
+
+.review-helpful { 
+  text-align: left;
+  width: 200px;
+  order: 5;   
+  border: none;
+  background-color: white;
+  padding-right: 5px;
+}
+
+
+
+
+
+
+
+.body-image{
+  display: flex;
+  flex-direction: row;
+}
+
+.review-body {
+  width: 45%;
+  font-size: 16px;
+  order: 3;  
+  padding-right: 50px;
+}
+
+.review-image {  
+  order: 4;
+  width: 125px;
+  height: 125px;
+  border-radius: 10px;    
+}
