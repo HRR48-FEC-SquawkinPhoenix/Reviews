@@ -14,7 +14,7 @@ const StarsAverage = ({data}) => {
   let averageStars = (totalStars / data.length);  
   
   return (    
-    <div>
+    <div className="total-stars">
       <Rating 
         initialRating={averageStars}
         readonly={true}   
