@@ -27,6 +27,7 @@ const ReviewListEntry = props => {
       <div>
         <div className="stars-item-body">
           <span className="stars">{stars}</span>
+          <p className="purchased-description">{props.review.itemDescription}</p>
           <div className="body-image">
             <p className="review-body">{props.review.reviewBody}</p>
             <img className="review-image" src={props.review.imageUrl}/>

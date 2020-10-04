@@ -7,7 +7,9 @@ import Tabs from './Tabs.jsx';
 
 function App() {
   const [data, setData] = useState([]);
+  const [dataStars, setStarData] = useState([]);
   const [numOfReviews, setNum] = useState(0);
+  const [numOfReviewsItem, setNumItems] = useState(0);
   const [reviewsByFour, setReviewsByFour] = useState([]);
   const [trackPageIndex, setPageIndex] = useState(0);
   const [tabSelected, selectTab] = useState(0);
@@ -19,8 +21,10 @@ function App() {
         return res.json();
       })
       .then((results) => {
+        setNumItems(5)
         setNum(results.length)                          
         setData(results)
+        setStarData(results);
         setReviewsByFour(results.slice(0, 4))
         setPageIndex(0);
         selectTab(0);
@@ -61,18 +65,18 @@ function App() {
     }  
   }
 
-  const onTabButtonClick = (e, itemName) => {   
+  const onTabButtonClick = (e, itemId) => {   
     if (tabSelected === 0) {
-      fetch(`/api/${itemName}`)  
+      fetch(`/api/item/${itemId}`)  
         .then((res) => {
           return res.json()
         })
-        .then((results) => {
-          setNum(results.length)                          
+        .then((results) => {                                    
           setData(results)
           setReviewsByFour(results.slice(0, 4))
           setPageIndex(0);
           selectTab(1);
+          setNumItems(results.length);
         })
         .catch(error => {
           throw error;
@@ -82,12 +86,11 @@ function App() {
           .then((res) => {
             return res.json()
           })
-          .then((results) => {
-            setNum(results.length)                          
+          .then((results) => {            
             setData(results)
             setReviewsByFour(results.slice(0, 4))
             setPageIndex(0);
-            selectTab(0);
+            selectTab(0);            
           })
           .catch(error => {
             throw error;
@@ -99,9 +102,9 @@ function App() {
   
   return (
     <div>
-      <div className="header">{numOfReviews + ' reviews '} <StarsAverage data={data}/> </div>
-      <Tabs tabClick={onTabButtonClick}/>
-      <ReviewList numOfButtons={numOfReviews} reviews={reviewsByFour} data={data}/>
+      <div className="header">{numOfReviews + ' reviews '} <StarsAverage data={dataStars}/> </div>
+      <Tabs tabClick={onTabButtonClick} numReviews={numOfReviews} numReviewsItem={numOfReviewsItem}/>
+      <ReviewList reviews={reviewsByFour} data={data}/>
       <PageCarouselButtons data={data} onPageNumberButtonClick={onPageNumberButtonClick} index={trackPageIndex} 
       onNextPageButtonClick={onNextPageButtonClick} onBackPageButtonClick={onBackPageButtonClick} 
       />

@@ -34,8 +34,6 @@
     "@fortawesome/free-regular-svg-icons": "^5.15.0",
     "@fortawesome/free-solid-svg-icons": "^5.15.0",
     "@fortawesome/react-fontawesome": "^0.1.11",
-    "@material/react-tab": "^0.15.0",
-    "@material/react-tab-bar": "^0.15.0",
     "axios": "^0.20.0",
     "eslint-config-hackreactor": "github:hackreactor-labs/eslint-config-hackreactor",
     "express": "^4.17.1",

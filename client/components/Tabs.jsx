@@ -1,14 +1,16 @@
 import React from 'react';
-import Tab from '@material/react-tab';
-import TabBar from '@material/react-tab-bar';
+
+
 
 const Tabs = (props) => {
   
 
 
-  return (  
-    <button onClick={props.tabClick}></button>
-    
+  return ( 
+  <div className="tabs">
+    <button className="tab" onClick={(e) => {props.tabClick(e, 12)}}>Reviews for this item <div className="tab-review-number">{props.numReviewsItem}</div> </button>  
+    <button className="tab" onClick={props.tabClick}>Reviews for this shop <div className="tab-review-number">{props.numReviews}</div> </button>  
+  </div>  
   )
 
 
@@ -16,13 +18,5 @@ const Tabs = (props) => {
 
 export default Tabs
 
-{/* <div>
-    <TabBar
-    activeIndex={0} 
-    handleActiveIndexUpdate={props.tabClick}   
-    >
-      <Tab>
-        <span className='mdc-tab__text-label'>hello</span>
-      </Tab>
-    </TabBar> 
-    </div> */}
+
+

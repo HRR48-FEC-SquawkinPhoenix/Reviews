@@ -6,15 +6,17 @@ const PageCarouselButtons = ({data, index, onNextPageButtonClick, onPageNumberBu
   let buttonNum = 0;  
   let arrOfFours = [];
 
-  const createIndexsOfFour = (data) => {               
-    let copy = data.slice();
+  const createIndexsOfFour = (data) => {
     let fourReviews = [];
-    for (let i = 0; i < copy.length; i++) {
-      fourReviews.push(copy[i]);
-      if(fourReviews.length === 4) {
+    for (let i = 0; i < data.length; i++) {
+      fourReviews.push(data[i]);
+      if (fourReviews.length === 4) {
         arrOfFours.push(fourReviews);
-        fourReviews = []
-      }
+        fourReviews = [];
+      }        
+    }
+    if (fourReviews.length) {
+      arrOfFours.push(fourReviews);   
     }
   }
 

@@ -8,6 +8,7 @@ const reviewSchema = new mongoose.Schema ({
   authorPhoto: String,
   author: String,
   purchasedItem: String,
+  purchasedItemId: Number,
   itemDescription: String,
   imageUrl: String,
   reviewBody: String,
