@@ -3,6 +3,7 @@ import ReviewList from './ReviewList.jsx';
 import PageCarouselButtons from './PageCarouselButtons.jsx';
 import StarsAverage from './StarsAverage.jsx';
 import Tabs from './Tabs.jsx';
+import $ from 'jquery';
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
   const onPageNumberButtonClick = (e, fourReviews, index) => {    
     setReviewsByFour(fourReviews);
     setPageIndex(index);
+    window.scrollTo({top: 0, behavior: 'smooth'});
   };  
 
 
@@ -52,6 +54,7 @@ function App() {
     setReviewsByFour(fourReviews);
     setPageIndex(index);      
     }
+    window.scrollTo({top: 0, behavior: 'smooth'});
   };
   
   const onBackPageButtonClick = (e, fourReviews, index) => {
@@ -63,6 +66,7 @@ function App() {
       setReviewsByFour(fourReviews);
       setPageIndex(index);
     }  
+    window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
   const onTabButtonClick = (e, itemId) => {   
@@ -76,7 +80,7 @@ function App() {
           setReviewsByFour(results.slice(0, 4))
           setPageIndex(0);          
           setNumItems(results.length);
-          selectTab(true);        
+          selectTab(true);                 
         })
         .catch(error => {
           throw error;
@@ -97,7 +101,7 @@ function App() {
         setStarData(results);
         setReviewsByFour(results.slice(0, 4))
         setPageIndex(0);
-        selectTab(false);               
+        selectTab(false);                      
       })        
       .catch(error => {
         throw error;
