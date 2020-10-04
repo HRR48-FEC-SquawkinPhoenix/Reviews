@@ -9,9 +9,9 @@ const reviewSchema = new mongoose.Schema ({
   author: String,
   purchasedItem: String,
   purchasedItemId: Number,
-  itemDescription: String,
-  imageUrl: String,
-  reviewBody: String,
+  itemDescription: {type: String, default: ''},
+  imageUrl: {type: String, default: 'https://via.placeholder.com/150/FFFFFF/FFFFFF'},    
+  reviewBody: {type: String, default: ''},
   helpful: {type: Number, default: 0},
   stars: Number,
   date: {type: Date, default: Date.now}

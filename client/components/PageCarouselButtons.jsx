@@ -21,10 +21,7 @@ const PageCarouselButtons = ({data, index, onNextPageButtonClick, onPageNumberBu
   }
 
   createIndexsOfFour(data);  
-  
-  
-   
-  
+    
   
   return (    
     <div>
