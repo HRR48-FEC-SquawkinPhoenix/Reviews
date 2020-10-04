@@ -131,3 +131,12 @@ border-bottom: 5px solid rgb(177, 177, 177)
   padding-right: 8px;
   padding-left: 8px;  
 }
+
+.page-number-btn,
+.next-back-btn {
+  background-color: rgb(226, 226, 226);
+  border: none;
+  border-radius: 90px;
+  padding: 10px;
+  
+}

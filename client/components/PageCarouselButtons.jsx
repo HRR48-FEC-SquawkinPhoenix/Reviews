@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import CarouselButton from './CarouselButton.jsx';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
+import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 
 const PageCarouselButtons = ({data, index, onNextPageButtonClick, onPageNumberButtonClick, onBackPageButtonClick}) => {
   
@@ -25,24 +28,26 @@ const PageCarouselButtons = ({data, index, onNextPageButtonClick, onPageNumberBu
   
   return (    
     <div>
-      <button onClick={(e) => {
-        onBackPageButtonClick(e, arrOfFours[index -1], index -1);
-      }}>Back</button>
+      <button className="next-back-btn" 
+      onClick={(e) => {onBackPageButtonClick(e, arrOfFours[index -1], index -1);}}
+      >
+        <FontAwesomeIcon icon ={faArrowLeft} />
+      </button>
       {arrOfFours.map((pageButtons) => {          
         ++buttonNum;
         return <CarouselButton
-        onPageNumberButtonClick={onPageNumberButtonClick}
-        arrOfFours = {arrOfFours}
-        pageButtons={pageButtons}
-        buttonNum={buttonNum}
-        key={buttonNum}
+          onPageNumberButtonClick={onPageNumberButtonClick}
+          arrOfFours = {arrOfFours}
+          pageButtons={pageButtons}
+          buttonNum={buttonNum}
+          key={buttonNum}
         />
       })}
-      <button onClick={(e) => {
-        onNextPageButtonClick(e, arrOfFours[index + 1], index + 1);
-      }}>
-        Next
-        </button>
+      <button className="next-back-btn"
+        onClick={(e) => {onNextPageButtonClick(e, arrOfFours[index + 1], index + 1);}}
+      >
+        <FontAwesomeIcon icon ={faArrowRight} />
+      </button>
     </div>
   )
   //when we click on a button we want to slice at that group button 1 returns elements 0-3 buttons 2 returns elements 4-7
