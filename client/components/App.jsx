@@ -12,7 +12,8 @@ function App() {
   const [numOfReviewsItem, setNumItems] = useState(0);
   const [reviewsByFour, setReviewsByFour] = useState([]);
   const [trackPageIndex, setPageIndex] = useState(0);
-  const [tabSelected, selectTab] = useState(0);
+  const [tabSelected, selectTab] = useState(false);
+  
     
 
   useEffect(() => {    
@@ -26,8 +27,7 @@ function App() {
         setData(results)
         setStarData(results);
         setReviewsByFour(results.slice(0, 4))
-        setPageIndex(0);
-        selectTab(0);
+        setPageIndex(0);               
       })        
       .catch(error => {
         throw error;
@@ -66,7 +66,7 @@ function App() {
   }
 
   const onTabButtonClick = (e, itemId) => {   
-    if (tabSelected === 0) {
+    if (tabSelected === false) {    
       fetch(`/api/item/${itemId}`)  
         .then((res) => {
           return res.json()
@@ -74,36 +74,45 @@ function App() {
         .then((results) => {                                    
           setData(results)
           setReviewsByFour(results.slice(0, 4))
-          setPageIndex(0);
-          selectTab(1);
+          setPageIndex(0);          
           setNumItems(results.length);
+          selectTab(true);        
         })
         .catch(error => {
           throw error;
         }) 
-    } else if (tabSelected === 1) {
-        fetch('/api/allReviews')  
-          .then((res) => {
-            return res.json()
-          })
-          .then((results) => {            
-            setData(results)
-            setReviewsByFour(results.slice(0, 4))
-            setPageIndex(0);
-            selectTab(0);            
-          })
-          .catch(error => {
-            throw error;
-          }) 
-    } 
+    }  
+  };
+
+  const onTabShowAllButtonClick = (e) => {
+    if (tabSelected === true) {
+      fetch('/api/allReviews')
+      .then((res) => {        
+        return res.json();
+      })
+      .then((results) => {
+        setNumItems(5)
+        setNum(results.length)                          
+        setData(results)
+        setStarData(results);
+        setReviewsByFour(results.slice(0, 4))
+        setPageIndex(0);
+        selectTab(false);               
+      })        
+      .catch(error => {
+        throw error;
+      })  
+    }
+  };
     
-  }
+    
+  
   
   
   return (
     <div>
       <div className="header">{numOfReviews + ' reviews '} <StarsAverage data={dataStars}/> </div>
-      <Tabs tabClick={onTabButtonClick} numReviews={numOfReviews} numReviewsItem={numOfReviewsItem}/>
+      <Tabs tabClick={onTabButtonClick} showAllClick={onTabShowAllButtonClick} numReviews={numOfReviews} numReviewsItem={numOfReviewsItem}/>
       <ReviewList reviews={reviewsByFour} data={data}/>
       <PageCarouselButtons data={data} onPageNumberButtonClick={onPageNumberButtonClick} index={trackPageIndex} 
       onNextPageButtonClick={onNextPageButtonClick} onBackPageButtonClick={onBackPageButtonClick} 
