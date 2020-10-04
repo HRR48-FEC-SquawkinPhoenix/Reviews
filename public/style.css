@@ -1,3 +1,8 @@
+.main-container {
+  max-width: 564px;
+}
+
+
 .header{
   display: flex;
   font-size: 26px;
@@ -15,7 +20,7 @@
   flex-flow: column wrap;
   align-content: space-between;
   height: 340px;
-  max-width: 564px;
+  max-width: 800px;
   font-family: "Darker Grotesque", sans-serif;
 }
 
@@ -73,23 +78,23 @@
 
 .body-image {
   display: flex;
-  flex-direction: row;
-  align-content: space-between;
-  padding-left: 50px;
+  flex-direction: row;  
+  justify-content: space-between;  
 }
 
 .review-body {
   width: 45%;
   font-size: 16px;
-  order: 3;  
-  padding-right: 50px;
+  order: 1;  
+  padding-left: 50px;
 }
 
-.review-image {    
-  order: 4;
+.review-image {  
+  display: flex;    
+  order: 3;
   width: 125px;
   height: 125px;
-  border-radius: 10px;     
+  border-radius: 10px;           
 }
 
 .purchased-description {
@@ -154,4 +159,16 @@ border-bottom: 5px solid rgb(177, 177, 177);
 }
 .next-back-btn:active {
   background-color: rgb(160, 160, 160);
-} 
+}  
+
+.sort-by-select,
+.sort-by-label {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;  
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 15px;  
+  background-color: white;
+  border:0px;
+  outline:0px;
+}

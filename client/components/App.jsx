@@ -3,7 +3,8 @@ import ReviewList from './ReviewList.jsx';
 import PageCarouselButtons from './PageCarouselButtons.jsx';
 import StarsAverage from './StarsAverage.jsx';
 import Tabs from './Tabs.jsx';
-import $ from 'jquery';
+import SortBy from './SortBy.jsx';
+
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
   const [reviewsByFour, setReviewsByFour] = useState([]);
   const [trackPageIndex, setPageIndex] = useState(0);
   const [tabSelected, selectTab] = useState(false);
+  const [sortedBy, changeSort] = useState('Recommended');
   
     
 
@@ -108,15 +110,40 @@ function App() {
       })  
     }
   };
+
+  const sortDataByDate = (data) => {
+    let sortedDataByDate = data.sort((a, b) => {return new Date(b.date) - new Date(a.date)});    
+    setData(sortedDataByDate);
+    setReviewsByFour(sortedDataByDate.slice(0, 4))
+  };
+
+  const sortDataByRecommended = (data) => {
+    let sortedDataByRecommended = data.sort((a, b) => {return b.helpful - a.helpful})      
+    setData(sortedDataByRecommended);
+    setReviewsByFour(sortedDataByRecommended.slice(0, 4));    
+  };
+  
+  const sortByOnClick = (e, value, data) => {
+    if (value === 'Recommended') {
+      return sortDataByRecommended(data)
+    }
+    if (value === 'Newest') {
+      return sortDataByDate(data)
+    }
+  };
+
+  
+
     
     
   
   
   
   return (
-    <div>
+    <div className="main-container">
       <div className="header">{numOfReviews + ' reviews '} <StarsAverage data={dataStars}/> </div>
       <Tabs tabClick={onTabButtonClick} showAllClick={onTabShowAllButtonClick} numReviews={numOfReviews} numReviewsItem={numOfReviewsItem}/>
+      <SortBy data={data} sortByOnClick={sortByOnClick}/>
       <ReviewList reviews={reviewsByFour} data={data}/>
       <PageCarouselButtons data={data} onPageNumberButtonClick={onPageNumberButtonClick} index={trackPageIndex} 
       onNextPageButtonClick={onNextPageButtonClick} onBackPageButtonClick={onBackPageButtonClick} 
