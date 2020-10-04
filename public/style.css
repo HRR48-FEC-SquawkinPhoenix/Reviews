@@ -117,10 +117,11 @@
 }
 
 .tab:hover {
-border-bottom: 5px solid rgb(177, 177, 177)
+border-bottom: 5px solid rgb(177, 177, 177);
 }
-.tab:active{
-  border-bottom: 5px solid rgb(0, 0, 0)
+.tab:focus{
+  border-bottom: 5px solid rgb(0, 0, 0);
+  outline: white;
 }
 
 .tab-review-number {
@@ -139,4 +140,18 @@ border-bottom: 5px solid rgb(177, 177, 177)
   border-radius: 90px;
   padding: 10px;
   margin: 4px;  
+  
 }
+.page-number-btn:hover ,
+.next-back-btn:hover {
+  cursor: pointer;
+  background-color: rgb(190, 190, 190);
+}
+
+.page-number-btn:focus {
+  background-color: rgb(160, 160, 160);
+  outline: white;
+}
+.next-back-btn:active {
+  background-color: rgb(160, 160, 160);
+} 
