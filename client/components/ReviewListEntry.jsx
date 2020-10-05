@@ -18,7 +18,7 @@ const ReviewListEntry = props => {
 
   
   return (
-    <li className="container">
+    <li className="reviews-container">
       <div className="name-date">
         <img className="author-image" src={props.review.authorPhoto}/>
         <p className="review-author">{props.review.author}</p>

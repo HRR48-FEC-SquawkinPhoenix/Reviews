@@ -16,7 +16,7 @@
   padding-right: 10px;
 }
 
-.container {
+.reviews-container {
   display: flex;
   flex-flow: column wrap;
   align-content: space-between;
