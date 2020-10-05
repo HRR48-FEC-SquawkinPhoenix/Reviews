@@ -23,7 +23,7 @@ function App() {
     
 
   useEffect(() => {    
-    fetch('/api/allReviews')
+    fetch('http://localhost:3002/api/allReviews')
       .then((res) => {        
         return res.json();
       })
