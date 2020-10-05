@@ -76,7 +76,7 @@ function App() {
 
   const onTabButtonClick = (e, itemId) => {   
     if (tabSelected === false) {    
-      fetch(`/api/item/${itemId}`)  
+      fetch(`http://localhost:3002/api/item/${itemId}`)  
         .then((res) => {
           return res.json()
         })
@@ -95,7 +95,7 @@ function App() {
 
   const onTabShowAllButtonClick = (e) => {
     if (tabSelected === true) {
-      fetch('/api/allReviews')
+      fetch('http://localhost:3002/api/allReviews')
       .then((res) => {        
         return res.json();
       })
