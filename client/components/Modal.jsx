@@ -1,13 +1,35 @@
 import React from 'react';
+import Moment from 'react-moment';
+import Rating from 'react-rating';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
+import { faStar as farStar} from '@fortawesome/free-regular-svg-icons';
 
 const Modal = ({modal, review}) => {
   
-console.log(review);
+
+  var stars = <Rating
+  initialRating={review.stars}
+  readonly={true}   
+  emptySymbol={<FontAwesomeIcon icon={farStar}/>}
+  fullSymbol={<FontAwesomeIcon icon={faStar}/>}
+  fractions={2}    
+  />
+
 
   if (modal) {
     return (
       <div id="modal">
         <img src={review.imageUrl}/>
+        <div>
+          <img className="author-image" src={review.authorPhoto}/>
+          <div>
+          <p className="review-date"><Moment interval={1500} format="MMM D, YYYY" withTitle>{review.date}</Moment></p>
+          <p className="review-author">{review.author}</p>
+          </div>
+          <span className="stars">{stars}</span>
+          <p className="review-body">{review.reviewBody}</p>
+        </div>        
       </div>
     )
   } else {
