@@ -30,7 +30,7 @@ const ReviewListEntry = props => {
           <p className="purchased-description">{props.review.itemDescription}</p>
           <div className="body-image">
             <p className="review-body">{props.review.reviewBody}</p>            
-            <img className="review-image" src={props.review.imageUrl}/>
+            <img className="review-image" src={props.review.imageUrl} onClick={(e) => {props.onReviewPhotoClickActivateModal(e, props.review)}}/>
           </div>
           <p className="purchased-item">{props.review.purchasedItem}</p>      
         </div>  
