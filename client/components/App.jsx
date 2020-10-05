@@ -136,7 +136,6 @@ function App() {
   };
 
   const onReviewPhotoClickActivateModal = (e, review) => {
-
     selectReview(review);
     showModal(true);
   }
@@ -148,17 +147,18 @@ function App() {
   
   
   return (
-    <div className="main-container">
-      <div className="header">{numOfReviews + ' reviews '} <StarsAverage data={dataStars}/> </div>
-      <Tabs tabClick={onTabButtonClick} showAllClick={onTabShowAllButtonClick} numReviews={numOfReviews} numReviewsItem={numOfReviewsItem}/>
-      <SortBy data={data} sortByOnClick={sortByOnClick}/>
-      <Modal modal={modal} review={targetedReview}/>
-      <ReviewList reviews={reviewsByFour} onReviewPhotoClickActivateModal={onReviewPhotoClickActivateModal}/>
-      <PageCarouselButtons data={data} onPageNumberButtonClick={onPageNumberButtonClick} index={trackPageIndex} 
-      onNextPageButtonClick={onNextPageButtonClick} onBackPageButtonClick={onBackPageButtonClick} 
-      />
-    </div>
-     
+    <div id="reviews">
+      <div className="main-container">
+        <div className="header">{numOfReviews + ' reviews '} <StarsAverage data={dataStars}/> </div>
+        <Tabs tabClick={onTabButtonClick} showAllClick={onTabShowAllButtonClick} numReviews={numOfReviews} numReviewsItem={numOfReviewsItem}/>
+        <SortBy data={data} sortByOnClick={sortByOnClick}/>      
+        <ReviewList reviews={reviewsByFour} onReviewPhotoClickActivateModal={onReviewPhotoClickActivateModal}/>      
+        <PageCarouselButtons data={data} onPageNumberButtonClick={onPageNumberButtonClick} index={trackPageIndex} 
+        onNextPageButtonClick={onNextPageButtonClick} onBackPageButtonClick={onBackPageButtonClick}       
+        />      
+      </div>
+     <Modal modal={modal} review={targetedReview}/>
+     </div>
   )
   
 

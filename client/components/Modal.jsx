@@ -20,15 +20,15 @@ const Modal = ({modal, review}) => {
   if (modal) {
     return (
       <div id="modal">
-        <img src={review.imageUrl}/>
-        <div>
-          <img className="author-image" src={review.authorPhoto}/>
-          <div>
-          <p className="review-date"><Moment interval={1500} format="MMM D, YYYY" withTitle>{review.date}</Moment></p>
-          <p className="review-author">{review.author}</p>
+        <img className="modal-image" src={review.imageUrl}/>
+        <div className="modal-image-date-author">
+          <img className="modal-author-image" src={review.authorPhoto}/>
+          <div className="modal-date-author">
+            <p className="review-date"><Moment interval={1500} format="MMM D, YYYY" withTitle>{review.date}</Moment></p>
+            <p className="review-author">{review.author}</p>
           </div>
-          <span className="stars">{stars}</span>
-          <p className="review-body">{review.reviewBody}</p>
+            <span className="stars">{stars}</span>
+            <p className="review-body">{review.reviewBody}</p>
         </div>        
       </div>
     )
