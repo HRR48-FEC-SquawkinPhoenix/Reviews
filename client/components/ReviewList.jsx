@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import ReviewListEntry from './ReviewListEntry.jsx';
 
   
-const ReviewList = ({reviews}) => {    
+const ReviewList = ({reviews, onReviewPhotoClickActivateModal}) => {    
   
   
   return (
@@ -11,6 +11,7 @@ const ReviewList = ({reviews}) => {
         {reviews.map((review) => {          
           return <ReviewListEntry
           review={review}
+          onReviewPhotoClickActivateModal={onReviewPhotoClickActivateModal}
           key={review._id}
           />
         })}

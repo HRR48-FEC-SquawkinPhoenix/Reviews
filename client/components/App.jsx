@@ -4,6 +4,7 @@ import PageCarouselButtons from './PageCarouselButtons.jsx';
 import StarsAverage from './StarsAverage.jsx';
 import Tabs from './Tabs.jsx';
 import SortBy from './SortBy.jsx';
+import Modal from './Modal.jsx';
 
 
 
@@ -15,7 +16,9 @@ function App() {
   const [reviewsByFour, setReviewsByFour] = useState([]);
   const [trackPageIndex, setPageIndex] = useState(0);
   const [tabSelected, selectTab] = useState(false);
-  const [sortedBy, changeSort] = useState('Recommended');
+  const [targetedReview, selectReview] = useState([]);
+  const [modal, showModal] = useState(false);
+  
   
     
 
@@ -132,7 +135,14 @@ function App() {
     }
   };
 
-  
+  const onReviewPhotoClickActivateModal = (e, review) => {
+    selectReview(review);
+    showModal(true);
+  }
+
+ const closeModalOnClick = (e) => {
+   showModal(false);
+ }
 
     
     
@@ -140,16 +150,18 @@ function App() {
   
   
   return (
-    <div className="main-container">
-      <div className="header">{numOfReviews + ' reviews '} <StarsAverage data={dataStars}/> </div>
-      <Tabs tabClick={onTabButtonClick} showAllClick={onTabShowAllButtonClick} numReviews={numOfReviews} numReviewsItem={numOfReviewsItem}/>
-      <SortBy data={data} sortByOnClick={sortByOnClick}/>
-      <ReviewList reviews={reviewsByFour} data={data}/>
-      <PageCarouselButtons data={data} onPageNumberButtonClick={onPageNumberButtonClick} index={trackPageIndex} 
-      onNextPageButtonClick={onNextPageButtonClick} onBackPageButtonClick={onBackPageButtonClick} 
-      />
-    </div>
-     
+    <div id="reviews">
+      <div className="main-container">
+        <div className="header">{numOfReviews + ' reviews '} <StarsAverage data={dataStars}/> </div>
+        <Tabs tabClick={onTabButtonClick} showAllClick={onTabShowAllButtonClick} numReviews={numOfReviews} numReviewsItem={numOfReviewsItem}/>
+        <SortBy data={data} sortByOnClick={sortByOnClick}/>      
+        <ReviewList reviews={reviewsByFour} onReviewPhotoClickActivateModal={onReviewPhotoClickActivateModal}/>      
+        <PageCarouselButtons data={data} onPageNumberButtonClick={onPageNumberButtonClick} index={trackPageIndex} 
+        onNextPageButtonClick={onNextPageButtonClick} onBackPageButtonClick={onBackPageButtonClick}       
+        />      
+      </div>
+     <Modal modal={modal} review={targetedReview} close={closeModalOnClick}/>
+     </div>
   )
   
 

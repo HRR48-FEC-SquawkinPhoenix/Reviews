@@ -1,5 +1,6 @@
 .main-container {
   max-width: 564px;
+  position: absolute;
 }
 
 
@@ -94,7 +95,11 @@
   order: 3;
   width: 125px;
   height: 125px;
-  border-radius: 10px;           
+  border-radius: 10px;
+}
+
+.review-image:hover {
+  cursor: pointer;
 }
 
 .purchased-description {
@@ -172,3 +177,64 @@ border-bottom: 5px solid rgb(177, 177, 177);
   border:0px;
   outline:0px;
 }
+
+/* #modal {
+  position: absolute;
+  background-color: white;
+} */
+
+.modal {
+  display: flex;  
+  flex-direction: row;
+  margin: 0!important;
+  background-color: white;  
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 99999px rgba(0, 0, 0, .5); 
+  width: 900px; 
+  border-radius: 18px;  
+  padding: 3px; 
+  font-family: "Darker Grotesque", sans-serif;
+} 
+.modal-image{       
+  border-radius: 18px;
+  width: 550px;
+  height: 500px;
+}
+
+.modal-review-data{
+  display: flex;
+  flex-direction: column wrap;
+  margin-left: 10px;
+}
+
+.modal-author-image { 
+  order: 1;       
+  margin-top: 10px;  
+  width: 36px;
+  height: 36px;
+  border-radius: 90px;  
+}
+.modal-date-author {
+  order: 1;
+}
+
+.modal-stars {       
+  font-size: 14px;    
+}
+
+.close-modal {
+  order: 2;       
+  background-color: white;
+  border: none;
+  font-size: 25px;
+  color: black;
+  height: 27px;
+  border-radius: 18px;
+}
+.close-modal:hover {
+  cursor: pointer;  
+}
+
