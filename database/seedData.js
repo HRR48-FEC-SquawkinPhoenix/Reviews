@@ -82,6 +82,7 @@ fakeData.push(tzReview);
 
 const insertSeedData = () => {  
   Review.create(fakeData)
+    .then((results) => {console.log(results)})
     .catch((error) => {console.error(error)})
     
 }
