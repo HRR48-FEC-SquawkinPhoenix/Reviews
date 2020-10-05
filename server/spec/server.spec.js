@@ -33,6 +33,8 @@ describe('server testing', () => {
       _id: expect.any(String),
       author: expect.any(String),
       purchasedItem: expect.any(String),
+      purchasedItemId: expect.any(Number),
+      itemDescription: expect.any(String),
       imageUrl: expect.any(String),
       reviewBody: expect.any(String),
       helpful: expect.any(Number),
@@ -43,7 +45,7 @@ describe('server testing', () => {
       .then(response => {
         return expect(response.data[0]).toMatchObject(expected);
       })
-      .catch(err => {
+      .catch(err => { 
         throw err
       })
   })
@@ -51,17 +53,19 @@ describe('server testing', () => {
   test('expect to be able to fetch a review by Id', () => {
     let expected = {
       __v: expect.any(Number),
-      _id: "5f722c4cbe45671dc32d43f7",
-      author: "Vincent Mann",
-      purchasedItem: "Generic Cotton Table",
-      imageUrl: "http://placeimg.com/640/480",
-      reviewBody: "Use the online XSS driver, then you can program the back-end card!",
-      helpful: 452,
-      stars: 0,
-      date: "2020-08-20T05:39:51.520Z"
+      _id: '5f792a50db7dae4de44c9aee',
+      author: expect.any(String),
+      purchasedItem: expect.any(String),
+      purchasedItemId: expect.any(Number),
+      itemDescription: expect.any(String),
+      imageUrl: expect.any(String),
+      reviewBody: expect.any(String),
+      helpful: expect.any(Number),
+      stars: expect.any(Number),
+      date: expect.any(String)
 
     }
-    return axios.get('http://localhost:3002/api/allReviews/5f722c4cbe45671dc32d43f7')
+    return axios.get('http://localhost:3002/api/allReviews/5f792a50db7dae4de44c9aee')
       .then(response => {
         return expect(response.data[0]).toMatchObject(expected)
       })
