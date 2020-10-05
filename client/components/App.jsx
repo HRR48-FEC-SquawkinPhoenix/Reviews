@@ -139,7 +139,10 @@ function App() {
     selectReview(review);
     showModal(true);
   }
-  
+
+ const closeModalOnClick = (e) => {
+   showModal(false);
+ }
 
     
     
@@ -157,7 +160,7 @@ function App() {
         onNextPageButtonClick={onNextPageButtonClick} onBackPageButtonClick={onBackPageButtonClick}       
         />      
       </div>
-     <Modal modal={modal} review={targetedReview}/>
+     <Modal modal={modal} review={targetedReview} close={closeModalOnClick}/>
      </div>
   )
   

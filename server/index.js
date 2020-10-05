@@ -31,11 +31,9 @@ app.get('/api/allReviews/:reviewId', function (req, res) {
 })
 
 app.get('/api/item/:itemId', function (req, res) {
-  let itemId = req.params.itemId.toString();;
-  
+  let itemId = req.params.itemId.toString();;  
   Review.find({purchasedItemId: itemId})
-    .then((results) => {
-      console.log(results);
+    .then((results) => {      
       res.json(results)
     })
     .catch(err => {
