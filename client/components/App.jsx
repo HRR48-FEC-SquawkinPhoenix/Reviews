@@ -15,29 +15,46 @@ function App() {
   const [numOfReviewsItem, setNumItems] = useState(0);
   const [reviewsByFour, setReviewsByFour] = useState([]);
   const [trackPageIndex, setPageIndex] = useState(0);
-  const [tabSelected, selectTab] = useState(false);
+  const [tabSelected, selectTab] = useState(true);
   const [targetedReview, selectReview] = useState([]);
   const [modal, showModal] = useState(false);
+  const [searchEndPoint, setSearchEndpoint] = useState('');
   
   
     
 
   useEffect(() => {    
-    fetch('http://localhost:3002/api/allReviews')
-      .then((res) => {        
+    let url = window.location.pathname;
+    let endPoint = url.substring(url.lastIndexOf('/') + 1);            
+    
+    if (!endPoint) {
+      endPoint = 12;
+    }
+
+
+    fetch(`http://localhost:3002/allReviews/${endPoint}`)
+      .then((res) => {                
         return res.json();
       })
       .then((results) => {
-        setNumItems(5)
-        setNum(results.length)                          
-        setData(results)
-        setStarData(results);
+        setNumItems(results.length)                             
+        setData(results)        
         setReviewsByFour(results.slice(0, 4))
-        setPageIndex(0);               
-      })        
+        setPageIndex(0); 
+        setSearchEndpoint(endPoint);
+        fetch('http://localhost:3002/allReviews/reviews')
+        .then((res) => {
+          return res.json();
+        })
+        .then((results) => {
+          console.log(results);
+          setStarData(results)
+          setNum(results.length)
+        })                     
+      })             
       .catch(error => {
         throw error;
-      })  
+      })   
              
   }, []); 
   
@@ -74,9 +91,9 @@ function App() {
     window.scrollTo({top: 0, behavior: 'smooth'});
   }
 
-  const onTabButtonClick = (e, itemId) => {   
+  const onTabButtonClick = (e) => {   
     if (tabSelected === false) {    
-      fetch(`http://localhost:3002/api/item/${itemId}`)  
+      fetch(`http://localhost:3002/allReviews/${searchEndPoint}`)
         .then((res) => {
           return res.json()
         })
@@ -95,13 +112,11 @@ function App() {
 
   const onTabShowAllButtonClick = (e) => {
     if (tabSelected === true) {
-      fetch('http://localhost:3002/api/allReviews')
+      fetch('http://localhost:3002/allReviews/reviews')
       .then((res) => {        
         return res.json();
       })
-      .then((results) => {
-        setNumItems(5)
-        setNum(results.length)                          
+      .then((results) => {                                          
         setData(results)
         setStarData(results);
         setReviewsByFour(results.slice(0, 4))
