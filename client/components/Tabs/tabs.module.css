@@ -17,10 +17,11 @@
   border-bottom: 5px solid rgb(226, 226, 226);
 }
 
-.tab:hover {
+.reviewTab:hover {
 border-bottom: 5px solid rgb(177, 177, 177);
+cursor: pointer;
 }
-.tab:focus{
+.reviewTab:focus{
   border-bottom: 5px solid rgb(0, 0, 0);
   outline: white;
 }
