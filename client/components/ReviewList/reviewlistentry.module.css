@@ -55,7 +55,7 @@
   margin-right: 100px;
 }
 
-.reviewImage {       
+.reviewImage {           
   order: 3;
   width: 125px;
   height: 125px;
@@ -75,7 +75,7 @@
 .reviewHelpful { 
   text-align: left;
   line-height: 0;
-  width: 165px;
+  width: 192px;  
   order: 5;   
   border: none;
   background-color: white;

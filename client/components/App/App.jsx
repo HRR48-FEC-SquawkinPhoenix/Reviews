@@ -21,7 +21,7 @@ function App() {
   const [tabSelected, selectTab] = useState(true);
   const [targetedReview, selectReview] = useState([]);
   const [modal, showModal] = useState(false);
-  const [searchEndPoint, setSearchEndpoint] = useState('');
+  const [searchEndPoint, setSearchEndpoint] = useState('');  
   
   
     
@@ -161,8 +161,7 @@ function App() {
    showModal(false);
  }
 
-    
-    
+  
   
   
   

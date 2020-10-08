@@ -5,10 +5,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar} from '@fortawesome/free-regular-svg-icons';
 import {faThumbsUp} from '@fortawesome/free-solid-svg-icons';
+import {faCheck} from '@fortawesome/free-solid-svg-icons';
 import styles from './reviewlistentry.module.css';
 
 const ReviewListEntry = props => {
- 
+  
+  const [whatToSay, setWhatToSay] = useState(' Is this review helpful?')
+
   var stars = <Rating
   initialRating={props.review.stars}
   readonly={true}   
@@ -16,6 +19,21 @@ const ReviewListEntry = props => {
   fullSymbol={<FontAwesomeIcon icon={faStar}/>}
   fractions={2}    
   />
+
+
+  const onReviewHelpfulClick = (e) => {
+    setWhatToSay(' Thanks for your feedback!')
+   }  
+
+
+  let whichIcon;
+  if (whatToSay === ' Is this review helpful?') {
+    whichIcon = <FontAwesomeIcon icon={faThumbsUp}/>;
+  } else {
+    whichIcon = <FontAwesomeIcon icon={faCheck}/>;
+  }
+
+   
 
   
   return (
@@ -36,7 +54,7 @@ const ReviewListEntry = props => {
           <p className={styles.purchasedItem}>{props.review.purchasedItem}</p>      
         </div>  
     </div>  
-      <button className={styles.reviewHelpful}><FontAwesomeIcon icon={faThumbsUp}/> Is this review helpful?</button>
+  <button onClick={onReviewHelpfulClick} className={styles.reviewHelpful}>{whichIcon}{whatToSay}</button>
     </li>
   )
 }
