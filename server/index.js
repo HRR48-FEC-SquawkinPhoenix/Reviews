@@ -17,26 +17,13 @@ app.get('/:itemId', function (req, res) {
   res.send(component);
 })
 
-// app.get('/:itemId', function (req, res) {
-//   let itemId = req.params.itemId.toString();;  
-//   Review.find({purchasedItemId: itemId})
-//     .then((results) => {      
-//       res.json(results)
-//     })
-//     .catch(err => {
-//       console.error(err);
-//     })    
-// })
-
 
 app.get('/allReviews/reviews', function(req, res) {
   Review.find({}).then((results) => {res.json(results)}).catch((error) => {console.log(error)});
 })
 
-app.get('/allReviews/:reviewId', function (req, res) {  
-  //Review.find({}).then((results) => {res.json(results)}).catch((error) => {console.log(error)});
-  let id = req.params.reviewId;
-  console.log(id);
+app.get('/allReviews/:reviewId', function (req, res) {    
+  let id = req.params.reviewId;  
   Review.find({purchasedItemId: id})
     .then((results) => {
       res.json(results)
@@ -45,20 +32,6 @@ app.get('/allReviews/:reviewId', function (req, res) {
       console.error(err);
     })
 })
-
-// app.get('/api/item/:itemId', function (req, res) {
-//   let itemId = req.params.itemId.toString();;  
-//   Review.find({purchasedItemId: itemId})
-//     .then((results) => {      
-//       res.json(results)
-//     })
-//     .catch(err => {
-//       console.error(err);
-//     })
-// })
-
-
-  
 
 
 app.listen(port, function() {

@@ -1,21 +1,21 @@
-.main-container {
+.mainContainer {
   max-width: 564px;  
 }
 
 
-.header{
+.reviewsHeader {
   display: flex;
   font-size: 26px;
   font-family: 'Cairo', sans-serif;  
 }
 
-.total-stars {
+.totalStars {
   font-size: 24px;
   padding-left: 10px;
   padding-right: 10px;
 }
 
-.reviews-container {
+.reviewsContainer {
   display: flex;
   flex-flow: column wrap;
   align-content: space-between;
@@ -24,22 +24,22 @@
   font-family: "Darker Grotesque", sans-serif;
 }
 
-.name-date {
+.nameDate {
   display: flex;
   flex-direction: row;    
 }
 
-.review-author {  
+.reviewAuthor {  
   padding-right: 5px;
   padding-left: 15px;
   font-size: 13px;
   order: 1;
 }
-.review-date {  
+.reviewDate {  
   font-size: 13px;
   order: 1;
 }
-.author-image {
+.authorImage {
   width: 36px;
   height: 36px;
   border-radius: 90px;      
@@ -51,13 +51,13 @@
   padding-left: 50px; 
 }
 
-.purchased-item {  
+.purchasedItem {  
   font-size: 13px;
   order: 4;
   padding-left: 50px;
 }
 
-.review-helpful { 
+.reviewHelpful { 
   text-align: left;
   line-height: 0;
   width: 165px;
@@ -70,26 +70,26 @@
   margin-left: 40px;
   
 }
-.review-helpful:hover {
+.reviewHelpful:hover {
   border-radius: 15px;
   background-color: rgb(226, 226, 226);
   cursor: pointer; 
 }
 
-.body-image {
+.bodyImage {
   display: flex;
   flex-direction: row;  
   justify-content: space-between;  
 }
 
-.review-body {
+.reviewBody {
   width: 45%;
   font-size: 16px;
   order: 1;  
   padding-left: 50px;
 }
 
-.review-image {  
+.reviewImage {  
   display: flex;    
   order: 3;
   width: 125px;
@@ -97,16 +97,16 @@
   border-radius: 10px;
 }
 
-.review-image:hover {
+.reviewImage:hover {
   cursor: pointer;
 }
 
-.purchased-description {
+.purchasedDescription {
   margin-left: 50px;
   font-size: 14px;
 }
 
-.tabs {
+.reviewTabs {
   display: flex;
   flex-direction: row;    
   width: 564px;
@@ -114,7 +114,7 @@
   font-family: "Darker Grotesque", sans-serif;
   font-size: 16px;
 }
-.tab {  
+.reviewTab {  
   padding-bottom: 10px;
   display: flex;
   flex-direction: row;
@@ -133,7 +133,7 @@ border-bottom: 5px solid rgb(177, 177, 177);
   outline: white;
 }
 
-.tab-review-number {
+.tabReviewNumber {
   margin-left: 10px;
   border-radius: 13px;
   background-color: rgb(226, 226, 226);  
@@ -142,8 +142,8 @@ border-bottom: 5px solid rgb(177, 177, 177);
   padding-left: 8px;  
 }
 
-.page-number-btn,
-.next-back-btn {
+.pageNumberBtn,
+.nextBackBtn {
   background-color: rgb(226, 226, 226);
   border: none;
   border-radius: 90px;
@@ -151,22 +151,22 @@ border-bottom: 5px solid rgb(177, 177, 177);
   margin: 4px;  
   
 }
-.page-number-btn:hover ,
-.next-back-btn:hover {
+.pageNumberBtn:hover ,
+.nextBackBtn:hover {
   cursor: pointer;
   background-color: rgb(190, 190, 190);
 }
 
-.page-number-btn:focus {
+.pageNumberBtn:focus {
   background-color: rgb(160, 160, 160);
   outline: white;
 }
-.next-back-btn:active {
+.pageNumberBtn:active {
   background-color: rgb(160, 160, 160);
 }  
 
-.sort-by-select,
-.sort-by-label {
+.sortBySelect,
+.sortByLabel {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;  
@@ -182,7 +182,7 @@ border-bottom: 5px solid rgb(177, 177, 177);
   background-color: white;
 } */
 
-.modal {
+.reviewModal {
   display: flex;  
   flex-direction: row;
   margin: 0!important;
@@ -198,34 +198,34 @@ border-bottom: 5px solid rgb(177, 177, 177);
   font-family: "Darker Grotesque", sans-serif;
   z-index: 10;
 } 
-.modal-image{       
+.reviewModalImage {       
   border-radius: 18px;
   width: 550px;
   height: 500px;
 }
 
-.modal-review-data{
+.modalReviewData {
   display: flex;
   flex-direction: column wrap;
   margin-left: 10px;
 }
 
-.modal-author-image { 
+.modalAuthorImage { 
   order: 1;       
   margin-top: 10px;  
   width: 36px;
   height: 36px;
   border-radius: 90px;  
 }
-.modal-date-author {
+.modalDateAuthor {
   order: 1;
 }
 
-.modal-stars {       
+.modalStars {       
   font-size: 14px;    
 }
 
-.close-modal {
+.reviewCloseModal {
   order: 2;       
   background-color: white;
   border: none;
@@ -234,7 +234,7 @@ border-bottom: 5px solid rgb(177, 177, 177);
   height: 27px;
   border-radius: 18px;
 }
-.close-modal:hover {
+.reviewCloseModal:hover {
   cursor: pointer;  
 }
 
