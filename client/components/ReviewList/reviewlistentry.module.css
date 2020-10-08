@@ -9,7 +9,8 @@
 
 .nameDate {
   display: flex;
-  flex-direction: row;    
+  flex-direction: row; 
+  align-items: center;   
 }
 
 .authorImage {
@@ -21,24 +22,30 @@
 .reviewAuthor {  
   padding-right: 5px;
   padding-left: 15px;
-  font-size: 13px;
+  font-size: 15px;
   order: 1;
+  color: rgb(56, 56, 56);
+  text-decoration: underline;
+  text-decoration-color: rgb(56, 56, 56);
+}
+.reviewAuthor:hover {
+  cursor: pointer;
 }
 
 .reviewDate {  
-  font-size: 13px;
+  font-size: 15px;
   order: 1;
 }
 
 .stars {    
-  font-size: 14px;
+  font-size: 16px;
   order: 2; 
   padding-left: 50px; 
 }
 
 .purchasedDescription {
   margin-left: 50px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .bodyImage {
@@ -48,18 +55,18 @@
 }
 
 .reviewBody {
-  width: 45%;
-  font-size: 16px;
+  width: 250px;
+  font-size: 17px;
   order: 1;  
   padding-left: 50px;
+  margin-right: 100px;
 }
 
-.reviewImage {  
-  display: flex;    
+.reviewImage {           
   order: 3;
   width: 125px;
   height: 125px;
-  border-radius: 10px;
+  border-radius: 10px;  
 }
 
 .reviewImage:hover {
@@ -67,7 +74,7 @@
 }
 
 .purchasedItem {  
-  font-size: 13px;
+  font-size: 15px;
   order: 4;
   padding-left: 50px;
 }
@@ -75,7 +82,7 @@
 .reviewHelpful { 
   text-align: left;
   line-height: 0;
-  width: 165px;
+  width: 192px;  
   order: 5;   
   border: none;
   background-color: white;

@@ -1,11 +1,38 @@
-.sortBySelect,
-.sortByLabel {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;  
+.sortBySelect {  
   font-family: "Darker Grotesque", sans-serif;
   font-size: 15px;  
   background-color: white;
   border:0px;
   outline:0px;
+  padding-left: 10px;
+  padding-right: 10px;
+  
+  border-radius: 15px;
 }
+
+.sortingButtonContainer {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;  
+}
+
+.sortByLabel {
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 15px;  
+  background-color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 15px;
+}
+
+
+.sortBySelect:hover,
+.sortByLabel:hover {
+  cursor: pointer;
+  background-color: rgb(226, 226, 226);
+}
+
+

@@ -12,7 +12,7 @@ const ReviewList = ({reviews, onReviewPhotoClickActivateModal}) => {
         {reviews.map((review) => {          
           return <ReviewListEntry
           review={review}
-          onReviewPhotoClickActivateModal={onReviewPhotoClickActivateModal}
+          onReviewPhotoClickActivateModal={onReviewPhotoClickActivateModal}          
           key={review._id}
           />
         })}
