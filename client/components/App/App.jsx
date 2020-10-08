@@ -31,7 +31,7 @@ function App() {
     let endPoint = url.substring(url.lastIndexOf('/') + 1);            
     
     if (!endPoint) {
-      endPoint = 12;
+      endPoint = 1;
     }
 
 
