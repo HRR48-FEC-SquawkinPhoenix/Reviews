@@ -1,0 +1,9 @@
+.mainContainer {
+  max-width: 564px;  
+}
+
+.reviewsHeader {
+  display: flex;
+  font-size: 26px;
+  font-family: 'Cairo', sans-serif;  
+}

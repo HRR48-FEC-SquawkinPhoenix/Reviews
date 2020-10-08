@@ -5,6 +5,9 @@ import StarsAverage from '../StarsAverage/StarsAverage.jsx';
 import Tabs from '../Tabs/Tabs.jsx';
 import SortBy from '../SortBy/SortBy.jsx';
 import Modal from '../Modal/Modal.jsx';
+import styles from './app.module.css';
+
+
 
 
 
@@ -165,8 +168,8 @@ function App() {
   
   return (
     <div id="reviews">
-      <div className="mainContainer">
-        <div className="reviewsHeader">{numOfReviews + ' reviews '} <StarsAverage data={dataStars}/> </div>
+      <div className={styles.mainContainer}>
+        <div className={styles.reviewsHeader}>{numOfReviews + ' reviews '} <StarsAverage data={dataStars}/> </div>
         <Tabs tabClick={onTabButtonClick} showAllClick={onTabShowAllButtonClick} numReviews={numOfReviews} numReviewsItem={numOfReviewsItem}/>
         <SortBy data={data} sortByOnClick={sortByOnClick}/>      
         <ReviewList reviews={reviewsByFour} onReviewPhotoClickActivateModal={onReviewPhotoClickActivateModal}/>      
