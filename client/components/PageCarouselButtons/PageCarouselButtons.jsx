@@ -3,6 +3,7 @@ import CarouselButton from '../CarouselButton/CarouselButton.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faArrowRight} from '@fortawesome/free-solid-svg-icons';
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
+import styles from './pagecarouselbuttons.module.css';
 
 const PageCarouselButtons = ({data, index, onNextPageButtonClick, onPageNumberButtonClick, onBackPageButtonClick}) => {
   
@@ -28,7 +29,7 @@ const PageCarouselButtons = ({data, index, onNextPageButtonClick, onPageNumberBu
   
   return (    
     <div>
-      <button className="nextBackBtn" 
+      <button className={styles.nextBackBtn} 
       onClick={(e) => {onBackPageButtonClick(e, arrOfFours[index -1], index -1);}}
       >
         <FontAwesomeIcon icon ={faArrowLeft} />
@@ -43,7 +44,7 @@ const PageCarouselButtons = ({data, index, onNextPageButtonClick, onPageNumberBu
           key={buttonNum}
         />
       })}
-      <button className="nextBackBtn"
+      <button className={styles.nextBackBtn}
         onClick={(e) => {onNextPageButtonClick(e, arrOfFours[index + 1], index + 1);}}
       >
         <FontAwesomeIcon icon ={faArrowRight} />

@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar} from '@fortawesome/free-regular-svg-icons';
 import {faThumbsUp} from '@fortawesome/free-solid-svg-icons';
+import styles from './reviewlistentry.module.css';
 
 const ReviewListEntry = props => {
  
@@ -18,24 +19,24 @@ const ReviewListEntry = props => {
 
   
   return (
-    <li className="reviewsContainer">
-      <div className="nameDate">
-        <img className="authorImage" src={props.review.authorPhoto}/>
-        <p className="reviewAuthor">{props.review.author}</p>
-        <p className="reviewDate"><Moment interval={1500} format="MMM D, YYYY" withTitle>{props.review.date}</Moment></p>
+    <li className={styles.reviewsContainer}>
+      <div className={styles.nameDate}>
+        <img className={styles.authorImage} src={props.review.authorPhoto}/>
+        <p className={styles.reviewAuthor}>{props.review.author}</p>
+        <p className={styles.reviewDate}><Moment interval={1500} format="MMM D, YYYY" withTitle>{props.review.date}</Moment></p>
       </div>
       <div>
-        <div className="starsItemBody">
-          <span className="stars">{stars}</span>
-          <p className="purchasedDescription">{props.review.itemDescription}</p>
-          <div className="bodyImage">
-            <p className="reviewBody">{props.review.reviewBody}</p>            
-            <img className="reviewImage" src={props.review.imageUrl} onClick={(e) => {props.onReviewPhotoClickActivateModal(e, props.review)}}/>
+        <div className={styles.starsItemBody}>
+          <span className={styles.stars}>{stars}</span>
+          <p className={styles.purchasedDescription}>{props.review.itemDescription}</p>
+          <div className={styles.bodyImage}>
+            <p className={styles.reviewBody}>{props.review.reviewBody}</p>            
+            <img className={styles.reviewImage} src={props.review.imageUrl} onClick={(e) => {props.onReviewPhotoClickActivateModal(e, props.review)}}/>
           </div>
-          <p className="purchasedItem">{props.review.purchasedItem}</p>      
+          <p className={styles.purchasedItem}>{props.review.purchasedItem}</p>      
         </div>  
     </div>  
-      <button className="reviewHelpful"><FontAwesomeIcon icon={faThumbsUp}/> Is this review helpful?</button>
+      <button className={styles.reviewHelpful}><FontAwesomeIcon icon={faThumbsUp}/> Is this review helpful?</button>
     </li>
   )
 }

@@ -3,6 +3,7 @@ import Rating from 'react-rating';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import { faStar as farStar} from '@fortawesome/free-regular-svg-icons'
+import styles from './starsaverage.module.css';
 
 const StarsAverage = ({data}) => {
   let totalStars = 0;
@@ -14,7 +15,7 @@ const StarsAverage = ({data}) => {
   let averageStars = (totalStars / data.length);  
   
   return (    
-    <div className="totalStars">
+    <div className={styles.totalStars}>
       <Rating 
         initialRating={averageStars}
         readonly={true}   

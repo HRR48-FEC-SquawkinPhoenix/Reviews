@@ -1,0 +1,11 @@
+.sortBySelect,
+.sortByLabel {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;  
+  font-family: "Darker Grotesque", sans-serif;
+  font-size: 15px;  
+  background-color: white;
+  border:0px;
+  outline:0px;
+}
