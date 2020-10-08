@@ -1,0 +1,13 @@
+.nextBackBtn {
+  background-color: rgb(226, 226, 226);
+  border: none;
+  border-radius: 90px;
+  padding: 10px;
+  margin: 4px;  
+  
+}
+
+.nextBackBtn:hover {
+  cursor: pointer;
+  background-color: rgb(190, 190, 190);
+}

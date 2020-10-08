@@ -1,0 +1,20 @@
+.pageNumberBtn:focus {
+  background-color: rgb(160, 160, 160);
+  outline: white;
+}
+.pageNumberBtn:active {
+  background-color: rgb(160, 160, 160);
+}  
+
+.pageNumberBtn:hover {
+  cursor: pointer;
+  background-color: rgb(190, 190, 190);
+}
+
+.pageNumberBtn {
+  background-color: rgb(226, 226, 226);
+  border: none;
+  border-radius: 90px;
+  padding: 10px;
+  margin: 4px;  
+}

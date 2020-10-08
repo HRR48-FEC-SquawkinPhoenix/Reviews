@@ -1,0 +1,92 @@
+.reviewsContainer {
+  display: flex;
+  flex-flow: column wrap;
+  align-content: space-between;
+  height: 340px;
+  max-width: 800px;
+  font-family: "Darker Grotesque", sans-serif;
+}
+
+.nameDate {
+  display: flex;
+  flex-direction: row;    
+}
+
+.authorImage {
+  width: 36px;
+  height: 36px;
+  border-radius: 90px;      
+}
+
+.reviewAuthor {  
+  padding-right: 5px;
+  padding-left: 15px;
+  font-size: 13px;
+  order: 1;
+}
+
+.reviewDate {  
+  font-size: 13px;
+  order: 1;
+}
+
+.stars {    
+  font-size: 14px;
+  order: 2; 
+  padding-left: 50px; 
+}
+
+.purchasedDescription {
+  margin-left: 50px;
+  font-size: 14px;
+}
+
+.bodyImage {
+  display: flex;
+  flex-direction: row;  
+  justify-content: space-between;  
+}
+
+.reviewBody {
+  width: 45%;
+  font-size: 16px;
+  order: 1;  
+  padding-left: 50px;
+}
+
+.reviewImage {  
+  display: flex;    
+  order: 3;
+  width: 125px;
+  height: 125px;
+  border-radius: 10px;
+}
+
+.reviewImage:hover {
+  cursor: pointer;
+}
+
+.purchasedItem {  
+  font-size: 13px;
+  order: 4;
+  padding-left: 50px;
+}
+
+.reviewHelpful { 
+  text-align: left;
+  line-height: 0;
+  width: 165px;
+  order: 5;   
+  border: none;
+  background-color: white;
+  height: 35px;  
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 40px;
+  
+}
+.reviewHelpful:hover {
+  border-radius: 15px;
+  background-color: rgb(226, 226, 226);
+  cursor: pointer; 
+}
