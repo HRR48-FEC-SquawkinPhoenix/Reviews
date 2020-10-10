@@ -35,7 +35,7 @@ function App() {
     }
 
 
-    fetch(`http://localhost:3002/allReviews/${endPoint}`)
+    fetch(`/allReviews/${endPoint}`)
       .then((res) => {                
         return res.json();
       })
@@ -45,7 +45,7 @@ function App() {
         setReviewsByFour(results.slice(0, 4))
         setPageIndex(0); 
         setSearchEndpoint(endPoint);
-        fetch('http://localhost:3002/allReviews/reviews')
+        fetch('/allReviews/reviews')
         .then((res) => {
           return res.json();
         })
@@ -95,7 +95,7 @@ function App() {
 
   const onTabButtonClick = (e) => {   
     if (tabSelected === false) {    
-      fetch(`http://localhost:3002/allReviews/${searchEndPoint}`)
+      fetch(`/allReviews/${searchEndPoint}`)
         .then((res) => {
           return res.json()
         })
@@ -114,7 +114,7 @@ function App() {
 
   const onTabShowAllButtonClick = (e) => {
     if (tabSelected === true) {
-      fetch('http://localhost:3002/allReviews/reviews')
+      fetch('/allReviews/reviews')
       .then((res) => {        
         return res.json();
       })
